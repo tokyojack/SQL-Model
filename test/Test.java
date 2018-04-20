@@ -12,7 +12,7 @@ public class Test extends JavaPlugin {
 		// Create DB connection then pass it into the util
 		
 		this.playerStatModel = new PlayerStatModel();
-        this.playerStatModel.createTable();
+        	this.playerStatModel.createTable();
 	}
 
 	public void onDisable() {
@@ -30,13 +30,13 @@ public class Test extends JavaPlugin {
 	
 	public void select(){
 		Valeon.getAPI().getPlayerStatModel().select("tokyojack", new SelectQuery() {
-            @Override
-            public void resault(Object resault) throws SQLException {
-                PlayerStat playerStat = (PlayerStat) resault;
+            		@Override
+            		public void resault(Object resault) throws SQLException {
+                		PlayerStat playerStat = (PlayerStat) resault;
 				System.out.println("Kills " + playerStat.getTotalKills());
 				System.out.println("Deaths " + playerStat.getTotalDeaths());
-            }
-        });
+            		}
+        	});
 	}
 	
 }
